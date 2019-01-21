@@ -1,7 +1,10 @@
 # Cookie-Is-Good
 
-Cookie &Eacute; Bom - Biblioteca JavaScript para manipulação de cookies.
+Cookie &Eacute; Bom - Biblioteca JavaScript para manipula&ccedil;&atilde;o de cookies.
 
+GitHub Pages: https://crisstanza.github.io/Cookie-Is-Good/
+
+Configura&ccedil;&atilde;o local Apache:
 
 File:
 
