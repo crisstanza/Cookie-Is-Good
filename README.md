@@ -1,4 +1,4 @@
-# Cookie-Is-Good
+# Cookie Is Good
 
 Cookie &Eacute; Bom - Biblioteca JavaScript para manipula&ccedil;&atilde;o de cookies.
 
