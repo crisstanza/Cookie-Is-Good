@@ -28,7 +28,7 @@ var CookieIsGood = {};
 		return CookieIsGood.NOT_FOUND;
 	};
 
-	CookieIsGood.set = function(cookieName, cookieValue, path, expirationInDays) {
+	CookieIsGood.set = function(cookieName, cookieValueOrJson, path, expirationInDays) {
 		if (expirationInDays) {
 			var expiration = new Date();
 			expiration.setTime(expiration.getTime() + expirationInDays*24*60*60*1000);
