@@ -22,7 +22,7 @@ var CookieIsGood = {};
 			var cookie = cookies[i];
 			var cookieNameValue = cookie.split(/\s*=\s*/);
 			if (cookieNameValue[0] == cookieName) {
-				return decodeURI(cookieNameValue[1]);
+				return decodeURIComponent(cookieNameValue[1]);
 			}
 		}
 		return CookieIsGood.NOT_FOUND;
@@ -33,7 +33,7 @@ var CookieIsGood = {};
 			var expiration = new Date();
 			expiration.setTime(expiration.getTime() + expirationInDays*24*60*60*1000);
 		}
-		document.cookie = cookieName + '=' + encodeURI(cookieValue) + (expirationInDays ? '; expires=' + expiration.toUTCString() : '') + '; path=' + (path ? path : '');
+		document.cookie = cookieName + '=' + encodeURIComponent(cookieValue) + (expirationInDays ? '; expires=' + expiration.toUTCString() : '') + '; path=' + (path ? path : '');
 		return CookieIsGood.SUCCESS;
 	};
 
