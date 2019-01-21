@@ -33,6 +33,12 @@ var CookieIsGood = {};
 			var expiration = new Date();
 			expiration.setTime(expiration.getTime() + expirationInDays*24*60*60*1000);
 		}
+		var cookieValue;
+		if (typeof cookieValueOrJson == 'object') {
+			cookieValue = JSON.stringify(cookieValueOrJson);
+		} else {
+			cookieValue = cookieValueOrJson;
+		}
 		document.cookie = cookieName + '=' + encodeURIComponent(cookieValue) + (expirationInDays ? '; expires=' + expiration.toUTCString() : '') + '; path=' + (path ? path : '');
 		return CookieIsGood.SUCCESS;
 	};
