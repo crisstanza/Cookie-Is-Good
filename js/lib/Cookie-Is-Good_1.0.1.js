@@ -24,6 +24,8 @@ var CookieIsGood = {};
 			if (cookieNameValue[0] == cookieName) {
 				var cookieValue  = decodeURIComponent(cookieNameValue[1]);
 				cookieValue = cookieValue.replace(new RegExp('\\+', 'g'), ' ');
+				cookieValue = cookieValue.replace(new RegExp('%28', 'g'), '(');
+				cookieValue = cookieValue.replace(new RegExp('%29', 'g'), ')');
 				return cookieValue;
 			}
 		}
