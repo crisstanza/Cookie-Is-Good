@@ -48,7 +48,7 @@ var CookieIsGood = {};
 		cookieValue = cookieValue.replace(new RegExp('\\)', 'g'), '%29');
 		cookieValue = cookieValue.replace(new RegExp('\\+', 'g'), '%2B');
 		cookieValue = encodeURIComponent(cookieValue);
-		document.cookie = cookieName + '=' + cookieValue + (expirationInDays ? '; expires=' + expiration.toUTCString() : '') + '; path=' + (path ? path : '');
+		document.cookie = cookieName + '=' + cookieValue + (expirationInDays ? ';expires=' + expiration.toUTCString() : '') + (path ? ';path=' + path : '');
 		return CookieIsGood.SUCCESS;
 	};
 
