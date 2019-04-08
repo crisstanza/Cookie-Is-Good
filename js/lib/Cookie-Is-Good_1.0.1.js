@@ -23,7 +23,6 @@ var CookieIsGood = {};
 			var cookieNameValue = cookie.split(/\s*=\s*/);
 			if (cookieNameValue[0] == cookieName) {
 				var cookieValue  = decodeURIComponent(cookieNameValue[1]);
-				cookieValue = cookieValue.replace(new RegExp('\\+', 'g'), ' ');
 				cookieValue = cookieValue.replace(new RegExp('%28', 'g'), '(');
 				cookieValue = cookieValue.replace(new RegExp('%29', 'g'), ')');
 				return cookieValue;
@@ -43,10 +42,8 @@ var CookieIsGood = {};
 		} else {
 			cookieValue = cookieValueOrJson;
 		}
-		cookieValue = cookieValue.replace(new RegExp(' ', 'g'), '%20');
 		cookieValue = cookieValue.replace(new RegExp('\\(', 'g'), '%28');
 		cookieValue = cookieValue.replace(new RegExp('\\)', 'g'), '%29');
-		cookieValue = cookieValue.replace(new RegExp('\\+', 'g'), '%2B');
 		cookieValue = encodeURIComponent(cookieValue);
 		document.cookie = cookieName + '=' + cookieValue + (expirationInDays ? ';expires=' + expiration.toUTCString() : '') + (path ? ';path=' + path : '');
 		return CookieIsGood.SUCCESS;
