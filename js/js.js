@@ -1,12 +1,13 @@
 (function() {
 
-	var frmTest, cookieName, cookieValue, btRead, btWrite, btErase, result, documentCookie;
+	var frmTest, cookieName, cookieValue, btRead, btWrite, btErase, result, documentCookie, CookieIsGood;
 
 	function log(obj) {
 		console.log(obj);
 	}
 
 	function initGlobals(event) {
+		CookieIsGood = io.github.crisstanza.CookieIsGood;
 		frmTest = document.forms['frmTest'];
 		cookieName = frmTest.cookieName;
 		cookieValue = frmTest.cookieValue;
